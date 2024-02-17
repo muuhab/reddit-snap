@@ -64,7 +64,7 @@ const SubredditList: FC<SubredditProps> = ({ type }) => {
                     <Loader2 className='w-6 h-6 text-zinc-500 animate-spin' />
                 </div>
             ) : (
-                <div className="grid grid-cols-4 gap-y-6 gap-x-8 pt-4 px-8 cursor-pointer pb-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-y-6 gap-x-8 pt-4 px-8 cursor-pointer pb-8">
                     {isFetched &&
                         subreddits?.pages?.map((page, pageIndex) => (
                             <Fragment key={pageIndex}>

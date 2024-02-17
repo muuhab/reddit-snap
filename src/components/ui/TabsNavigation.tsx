@@ -8,10 +8,10 @@ const TabsNavigation = () => {
 
     return (
         <Tabs selectedIndex={tabIndex} onSelect={(index) => setTabIndex(index)} selectedTabClassName='border-b-4 border-[#4E4CEC] transition  text-black focus:outline-none ' className={'bg-[#F6F6F6] flex-grow '}>
-            <TabList className={'bg-white text-gray-500 flex justify-between text-3xl text-center  '}>
-                <Tab className={'py-8 px-6 cursor-pointer w-full'}>Hot</Tab>
-                <Tab className={'py-8 px-6 cursor-pointer w-full'}>New</Tab>
-                <Tab className={'py-8 px-6 cursor-pointer w-full'}>Rising</Tab>
+            <TabList className={'bg-white text-gray-500 flex justify-between 2xl:text-3xl xl:text-2xl lg:text-xl md:text-lg text-center  '}>
+                <Tab className={'2xl:py-8 xl:py-6 md:py-4 py-2 px-6 cursor-pointer w-full'}>Hot</Tab>
+                <Tab className={'2xl:py-8 xl:py-6 md:py-4 py-2 px-6 cursor-pointer w-full'}>New</Tab>
+                <Tab className={'2xl:py-8 xl:py-6 md:py-4 py-2 px-6 cursor-pointer w-full'}>Rising</Tab>
             </TabList>
 
             <TabPanel>
