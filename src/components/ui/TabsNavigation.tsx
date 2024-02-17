@@ -5,9 +5,9 @@ import { Loader2 } from 'lucide-react'
 import { Fragment, useEffect, useRef, useState } from 'react'
 import { Tab, TabList, TabPanel, Tabs } from 'react-tabs'
 import { API_URL } from '../../lib/config'
+import { saveToFirebase } from '../../lib/firebase.config'
 import { SubredditType } from '../../lib/types'
 import Subreddit from '../Subreddit'
-import { saveToFirebase } from '../../lib/firebase.config'
 
 
 
@@ -68,8 +68,8 @@ const TabsNavigation = () => {
         </TabList>
 
         {Array.from({ length: 3 }).map((_, index) => (
-            <TabPanel key={index}  >
-                {isPending ? <div className="flex justify-center items-center flex-grow h-[70vh]"><Loader2 className='w-6 h-6 text-zinc-500 animate-spin' /></div>
+            <TabPanel key={index} data-testid={`tabs-navigation${index}`} >
+                {isPending ? <div data-testid="loading-spinner" className="flex justify-center items-center flex-grow h-[70vh]"><Loader2 className='w-6 h-6 text-zinc-500 animate-spin' /></div>
                     :
                     <div className="grid grid-cols-4 gap-y-6 gap-x-8 pt-4 px-8 cursor-pointer pb-8">
                         {isFetched && subreddits?.pages?.map((page, pageIndex) => (
@@ -86,7 +86,7 @@ const TabsNavigation = () => {
                             </Fragment>
                         ))}
                         {isFetchingNextPage && (
-                            <div className='flex justify-center items-center'>
+                            <div data-testid="loading-spinner-2" className='flex justify-center items-center'>
                                 <Loader2 className='w-6 h-6 text-zinc-500 animate-spin' />
                             </div>
                         )}
