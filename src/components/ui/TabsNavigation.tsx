@@ -7,6 +7,7 @@ import { Tab, TabList, TabPanel, Tabs } from 'react-tabs'
 import { API_URL } from '../../lib/config'
 import { SubredditType } from '../../lib/types'
 import Subreddit from '../Subreddit'
+import { saveToFirebase } from '../../lib/firebase.config'
 
 
 
@@ -36,6 +37,10 @@ const TabsNavigation = () => {
                 }
 
             })
+            data?.data?.data.children.map(({ data: subreddit }: { data: SubredditType }) => {
+                saveToFirebase(subreddit);
+            }
+            )
             return data
         },
         refetchOnWindowFocus: false,
