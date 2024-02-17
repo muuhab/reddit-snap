@@ -2,7 +2,6 @@ import TabsNavigation from './components/ui/TabsNavigation'
 
 function App() {
 
-
   return (
     <>
       <div className="flex flex-col bg-white  h-screen">
@@ -11,7 +10,6 @@ function App() {
             /r/FlutterDev
           </h1>
         </div>
-
         <TabsNavigation />
       </div>
 
